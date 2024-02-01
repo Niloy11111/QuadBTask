@@ -1,0 +1,14 @@
+/* .rawCssCard {
+  height: 400px;
+  width: 250px;
+  color: red;
+  box-shadow: 5px 5px 5px white;
+  overflow: hidden;
+} */
+
+.intro {
+  /* background-color: var(--container-color); */
+  /* box-shadow: 0 8px 24px hsla(0, 0%, 0%, 0.15); */
+  /* margin-inline: auto; */
+  /* transition: opacity 1s 1s; */
+}
