@@ -6,7 +6,7 @@ const Banner = () => {
     <div className=" flex justify-between items-center h-[80vh]">
       <div>
         <h2 className="text-6xl text-white font-extrabold italic font-Inter">
-          Explore Show That{" "}
+          Explore Shows That{" "}
           <span className="text-[#E2B659] ">Blow Your Mind</span>
         </h2>
       </div>

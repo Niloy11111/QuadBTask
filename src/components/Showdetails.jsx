@@ -28,8 +28,6 @@ const Showdetails = () => {
   const uniqueId = show?.id;
   const genresInfo = genres?.[0];
 
-  console.log(genresInfo);
-
   const localStorageItem = {
     eventName,
     status,
@@ -52,7 +50,6 @@ const Showdetails = () => {
       uniqueId,
       genresInfo,
     };
-    // console.log(eventInfo);
 
     const bookedEventArray = [];
 
@@ -61,7 +58,13 @@ const Showdetails = () => {
     if (!bookedEvents) {
       bookedEventArray.push(eventInfo);
       localStorage.setItem("booked", JSON.stringify(bookedEventArray));
-      Swal("Good job!", "You have donated successfully!", "success");
+      Swal.fire({
+        position: "top-end",
+        icon: "success",
+        title: "Your Action has been saved",
+        showConfirmButton: false,
+        timer: 1500,
+      });
     } else {
       const isExist = bookedEvents.find(
         (item) => parseFloat(item?.uniqueId) === idCard
@@ -70,9 +73,21 @@ const Showdetails = () => {
       if (!isExist) {
         bookedEventArray.push(...bookedEvents, localStorageItem);
         localStorage.setItem("booked", JSON.stringify(bookedEventArray));
-        Swal("Good job!", "You have donated successfully!", "success");
+        Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: "Your Action has been saved",
+          showConfirmButton: false,
+          timer: 1500,
+        });
       } else {
-        Swal("Sorry !", "You have donated successfully!", "error");
+        Swal.fire({
+          position: "top-end",
+          icon: "error",
+          title: "Sorry ! it is already booked",
+          showConfirmButton: false,
+          timer: 1500,
+        });
       }
     }
   };

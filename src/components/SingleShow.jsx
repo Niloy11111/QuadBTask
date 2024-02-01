@@ -7,16 +7,23 @@ const Singleshow = ({ showInfo }) => {
 
   return (
     <div className="rawCssCard ">
-      <div className="card-container bg-gray-200">
+      <div className="card-container relative">
         <img className="h-[400px] w-full" src={image?.original}></img>
-        <div className="flex justify-between text-white">
-          <h2 className=" text-xl font-medium font-Inter"> {name} </h2>
-          <p className=" font-Inter">
-            rating <span className="text-xl text-[#E2B659]">*</span>{" "}
-            {rating?.average}
-          </p>
+        <div
+          style={{
+            backgroundColor: "rgba(11, 11, 11, 0.80)",
+          }}
+          className="p-2 flex justify-between absolute bottom-0   bg-blend-overlay h-[70px]  w-full"
+        >
+          <h2 className=" text-2xl font-bold  text-[#F9F871] font-Inter">
+            {" "}
+            {name}{" "}
+          </h2>
+
           <Link to={`/details/${id}`}>
-            <button className="px-6 bg-red-700 rounded-lg">Details</button>
+            <button className="px-6 py-2 bg-[#F9F871] font-Inter">
+              Details
+            </button>
           </Link>
         </div>
       </div>
@@ -25,5 +32,3 @@ const Singleshow = ({ showInfo }) => {
 };
 
 export default Singleshow;
-
-import React from "react";
