@@ -1,6 +1,8 @@
+import Lottie from "lottie-react";
 import { MdOutlineArrowBackIos } from "react-icons/md";
 import { Link, useLoaderData, useParams } from "react-router-dom";
 import Swal from "sweetalert2";
+import img from "../assets/Animation - 1706781657798.json";
 const Showdetails = () => {
   const allShows = useLoaderData();
   const params = useParams();
@@ -102,7 +104,7 @@ const Showdetails = () => {
       <div className="-mb-14 flex gap-5 items-center">
         <Link to={`/`}>
           {" "}
-          <button className="bg-white hover:bg-[#E2B659] px-3 py-3 rounded-full">
+          <button className="hover:bg-[#11190C] transition-all duration-150 bg-[#E2B659] hover:text-white px-3 py-3 rounded-full">
             {" "}
             <MdOutlineArrowBackIos></MdOutlineArrowBackIos>{" "}
           </button>
@@ -132,19 +134,22 @@ const Showdetails = () => {
           <p className="text-[#fff] mt-12 font-Inter"> {summary} </p>
 
           <button
-            className=" px-10 mt-5 py-3 text-sm font-Inter font-semibold bg-[#F9F871]"
+            className="mt-4 px-6 py-2 hover:bg-[#F9F871] hover:text-black bg-[#11190C] transition-all duration-150  rounded-full text-[#F9F871] font-Inter"
             onClick={() => document.getElementById("my_modal_1").showModal()}
           >
-            Lets Book
+            Let's Book
           </button>
           <dialog id="my_modal_1" className="modal ">
             <div className="modal-box rounded bg-[#412728] text-[#fff]">
-              <img
-                className="mx-auto mb-7"
-                src="https://www.monster.com/assets/profile/_next/static/media/cloud.44af2f8f.svg"
-              ></img>
+              <div className="flex justify-center">
+                <Lottie
+                  className="w-[100px] "
+                  animationData={img}
+                  loop={true}
+                />
+              </div>
               <h2 className="mb-5 text-lg font-bold font-Inter text-center mt-2">
-                Book a Movie Ticket
+                Book a Ticket
               </h2>
 
               <form action="" onSubmit={handleAddBook}>
@@ -178,7 +183,7 @@ const Showdetails = () => {
                   name="genresInfo"
                   id=""
                 />
-                <button className="py-3 w-full border-2 gap-3 border-[#D9DBE9] hover:bg-[#000000] text-[#fff] rounded font-semibold text-sm">
+                <button className="py-3 w-full gap-3   hover:bg-[#F9F871] transition-all bg-[#11190C] duration-150 hover:text-black  text-[#fff] rounded font-semibold ">
                   Continue
                 </button>
               </form>
@@ -186,7 +191,7 @@ const Showdetails = () => {
               <div className="modal-action">
                 <form method="dialog">
                   {/* if there is a button in form, it will close the modal */}
-                  <button className="border-2  px-6 py-2 text-sm bg-[#6e46ae] font-semibold rounded text-[#FFF]">
+                  <button className="px-6 py-2 hover:bg-[#F9F871] hover:text-black bg-[#11190C] transition-all duration-150  rounded-full text-[#F9F871] font-Inter">
                     GO BACK
                   </button>
                 </form>

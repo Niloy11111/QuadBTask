@@ -21,7 +21,7 @@ const Singleshow = ({ showInfo }) => {
           </h2>
 
           <Link to={`/details/${id}`}>
-            <button className="px-6 py-2 bg-[#F9F871] font-Inter">
+            <button className="px-6 py-2 hover:bg-[#F9F871] hover:text-black bg-[#11190C] transition-all duration-150  rounded-full text-[#F9F871] font-Inter">
               Details
             </button>
           </Link>
